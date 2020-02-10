@@ -34,11 +34,25 @@ def step3():
             print('Думаю, я справлюсь! С тобой весело)) ')
         elif distance > 1:
             print('Далекооооо!!')
+            step4()
 
     except ValueError:
         print('Напиши число!')
         step3()
+        
+        
+def step4():
+    print('Может вернемся домой?')
+    option = ''
+    options = {'да': True, 'нет': False}
+    option = input()
+    while option not in options:
+        print('Скажи: {}/{}'.format(*options))
+        option = input()
 
+    if options[option]:
+        return print('ураа!')
+    return print(':(')
 
 if __name__=='__main__':
     print('Уточка решила погулять. ')
