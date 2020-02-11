@@ -1,20 +1,31 @@
 def step1():
-    location = input('Что будем делать - плавать или идти?')
-    if location == 'плавать':
-        print('Спасибо! Я люблю плавать :)')
-        step2()
-        quit()
+    print('Что мы будем делать - плавать или идти?')
+    options = {'плавать': True, 'идти': False}
+    option = input()
+    while option not in options:
+        print('Скажи {} или {}'.format(*options))
+        option = input()
 
-    if location == 'идти':
-        print('Что ж! Пойдем пешком..')
-        small_talk = input('Как твои дела?')
-        print('Честно, я больше люблю плавать')
-        step3()
-        quit()
+    if options[option]:
+        return step2()
+    return step3()
 
-    else:
-        print('Прости, я могу только идти или плавать. Напиши, что мне делать!')
-        step1()
+#     location = input('Что будем делать - плавать или идти?')    
+#     if location == 'плавать':
+#         print('Спасибо! Я люблю плавать :)')
+#         step2()
+#         quit()
+
+#     if location == 'идти':
+#         print('Что ж! Пойдем пешком..')
+#         small_talk = input('Как твои дела?')
+#         print('Честно, я больше люблю плавать')
+#         step3()
+#         quit()
+
+#     else:
+#         print('Прости, я могу только идти или плавать. Напиши, что мне делать!')
+#         step1()
 
 def step2():
     player_answer = str(input('Ты умеешь плавать?'))
